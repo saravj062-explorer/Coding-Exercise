@@ -1,7 +1,6 @@
 package Ques_2_weightwatchers;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -9,9 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,8 +15,10 @@ public class Search_studio_slots {
 	static WebDriver driver;
 
 	@Test
-	public static void searchstudio() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "./drivers//chromedriver.exe");
+	public static void searchstudio()  {
+		try{
+			System.setProperty("webdriver.chrome.driver", "./drivers//chromedriver.exe");
+		
 		driver = new ChromeDriver();
 		driver.get("https://www.weightwatchers.com/us/");
 		driver.manage().window().maximize();
@@ -36,7 +34,12 @@ public class Search_studio_slots {
 		
 		 
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-		Thread.sleep(3000);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		String Act_workshop_pagetitle = driver.getTitle();
 
 		// Replacing non breaking space with space"
@@ -105,12 +108,22 @@ public class Search_studio_slots {
 			System.out.println("Enter a valid input day name. Refer Hint");
 			Assert.assertTrue(false);
 		}
-
+		
 		inp.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+		driver.quit();	
+		}
 
 		// Closing the browser window
 
-		driver.quit();
 	}
+	}
+	
+	
 
-}
