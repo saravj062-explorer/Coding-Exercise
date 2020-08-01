@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29088" started-at="2020-08-01T11:41:24 EDT" finished-at="2020-08-01T11:41:53 EDT">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29088" started-at="2020-08-01T11:41:24 EDT" finished-at="2020-08-01T11:41:53 EDT">
+      <class name="Ques_2_weightwatchers.Search_studio_slots">
+        <test-method status="PASS" signature="searchstudio()[pri:0, instance:Ques_2_weightwatchers.Search_studio_slots@6f1fba17]" name="searchstudio" duration-ms="29058" started-at="2020-08-01T11:41:24 EDT" finished-at="2020-08-01T11:41:53 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchstudio -->
+      </class> <!-- Ques_2_weightwatchers.Search_studio_slots -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
