@@ -46,7 +46,7 @@ public class WW_pageobjects_2 extends PageObject
 	}
 	public void SearchResultClick() {
 
-		searchresult.click();
+		firstResult.click();
 
 	}
 	public String fr_getText() 

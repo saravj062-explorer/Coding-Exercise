@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23174" started-at="2020-08-01T15:52:21 EDT" finished-at="2020-08-01T15:52:44 EDT">
+  <suite name="Suite" duration-ms="35803" started-at="2020-08-02T02:41:06 EDT" finished-at="2020-08-02T02:41:41 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23174" started-at="2020-08-01T15:52:21 EDT" finished-at="2020-08-01T15:52:44 EDT">
+    <test name="Test" duration-ms="35803" started-at="2020-08-02T02:41:06 EDT" finished-at="2020-08-02T02:41:41 EDT">
       <class name="Ques_2_weightwatchers.Search_studio_slots">
-        <test-method status="PASS" signature="searchstudio()[pri:0, instance:Ques_2_weightwatchers.Search_studio_slots@6f1fba17]" name="searchstudio" duration-ms="23145" started-at="2020-08-01T15:52:21 EDT" finished-at="2020-08-01T15:52:44 EDT">
+        <test-method status="PASS" signature="searchstudio()[pri:0, instance:Ques_2_weightwatchers.Search_studio_slots@7b49cea0]" name="searchstudio" duration-ms="35693" started-at="2020-08-02T02:41:06 EDT" finished-at="2020-08-02T02:41:41 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchstudio -->
       </class> <!-- Ques_2_weightwatchers.Search_studio_slots -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
