@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class find_n_smallest_500numbers {
 
 	public static void main(String[] args) {
+	
 		@SuppressWarnings("resource")
 		Scanner num = new Scanner(System.in);
 		System.out.println("Enter the Random Numbers count to generate Random Numbers: ");
