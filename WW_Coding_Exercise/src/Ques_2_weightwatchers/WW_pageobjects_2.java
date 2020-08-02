@@ -5,16 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class WW_pageobjects_2
+public class WW_pageobjects_2 extends PageObject
 
 {
-	WebDriver ldriver;
-
-	WW_pageobjects_2(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	
+	public WW_pageobjects_2(WebDriver driver) {
+		super(driver);
+		
 	}
-
 	@FindBy(id = "location-search")
 	WebElement LocationSearch;
 
@@ -24,6 +22,12 @@ public class WW_pageobjects_2
 	@FindBy(className = "container-3SE46")
 	WebElement searchresult;
 
+	@FindBy(className = "linkUnderline-1_h4g")
+	WebElement firstResult;
+	
+	@FindBy(className = "distance-OhP63")
+	WebElement firstDistance;
+	
 	public void clickLocationSearch() {
 
 		LocationSearch.click();
@@ -44,5 +48,13 @@ public class WW_pageobjects_2
 
 		searchresult.click();
 
+	}
+	public String fr_getText() 
+	{
+		return firstResult.getText();
+	}
+	public String fd_getText() 
+	{
+		return firstDistance.getText();
 	}
 }

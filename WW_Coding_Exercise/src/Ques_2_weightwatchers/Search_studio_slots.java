@@ -52,7 +52,6 @@ public class Search_studio_slots {
 		WW_pageobjects_3 pageobj3 = new WW_pageobjects_3(driver);
 		pageobj2.clickLocationSearch();
 		pageobj2.LocationSearchInput();
-
 		pageobj2.SearchArrow();
 		//driver.manage().timeouts().pageLoadTimeout(5000,TimeUnit.MILLISECONDS);
 		
@@ -62,15 +61,11 @@ public class Search_studio_slots {
 		  { e.printStackTrace(); 
 		  }
 		 
-
-		// Since I need first element I am searching using findElement method
-		WebElement firstResult = pageobj2.searchresult.findElement(By.className("linkUnderline-1_h4g"));
-		
-		String firstresultname = firstResult.getText();
-
+		  //Printing the FIRST SEARCH RESULT & it's DISTANCE
+		String firstresultname = pageobj2.fr_getText();
+		String firstDistance = pageobj2.fd_getText();
 		System.out.println("The first search result Title :  " + firstresultname);
-		WebElement firstDistance = pageobj2.searchresult.findElement(By.className("distance-OhP63"));
-		System.out.println("The first search result's Distance  : " + firstDistance.getText());
+		System.out.println("The first search result's Distance  : " + firstDistance);
 		System.out.println();
 		pageobj2.SearchResultClick();
 
@@ -81,7 +76,7 @@ public class Search_studio_slots {
 		  }
 		
 		
-		String locationname = pageobj3.locationname.getText();
+		String locationname = pageobj3.loc_getText();
 
 		// Checking if the title of the 1st search result is same as the 1st search
 		// result location page title
@@ -123,6 +118,7 @@ public class Search_studio_slots {
 		// Closing the browser window
 
 	}
+	
 	}
 	
 	

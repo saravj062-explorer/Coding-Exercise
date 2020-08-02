@@ -1,17 +1,14 @@
 package Ques_2_weightwatchers;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class WW_pageobjects_1 {
-	WebDriver ldriver;
+public class WW_pageobjects_1 extends PageObject{
 
-	WW_pageobjects_1(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public WW_pageobjects_1(WebDriver driver) {
+		super(driver);
+		
 	}
 
 	@FindBy(className = "Icon_icon__wrapper__3dIsp")

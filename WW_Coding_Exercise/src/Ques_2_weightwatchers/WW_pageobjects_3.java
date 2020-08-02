@@ -8,23 +8,28 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
-import org.openqa.selenium.support.PageFactory;
 
-public class WW_pageobjects_3 {
-	WebDriver ldriver;
-	public static HashMap<String, Integer> associate_slots = null;
-
-	WW_pageobjects_3(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+public class WW_pageobjects_3  extends PageObject 
+{
+	
+	public WW_pageobjects_3(WebDriver driver) {
+		super(driver);
+		
 	}
 
+	public static HashMap<String, Integer> associate_slots = null;
+	
 	@FindBy(className = "locationName-1jro_")
 	WebElement locationname;
 
 	@FindBys(@FindBy(className = "day-NhBOb"))
 	List<WebElement> workshopschedule;
-
+	
+	public String loc_getText() 
+	{
+		return locationname.getText();
+	}
+	
 	// Finding the schedule
 
 	public void printmeeting(String DAY) {
