@@ -86,7 +86,7 @@ public class Search_studio_slots {
 		// result location page title
 		Assert.assertEquals(firstresultname, locationname,
 				"The First result name in the Find Workshops page and name in specific location page are not same");
-		ExtentReport_Imp.test.log(Status.PASS, "The First result name in the Find Workshops page and name in specific location page are not same");
+		ExtentReport_Imp.test.log(Status.PASS, "The First result name in the Find Workshops page and name in specific location page are same");
 		
 		
 		ArrayList<String> inputdayslist= WW_pageobjects_3.daysofweek();
