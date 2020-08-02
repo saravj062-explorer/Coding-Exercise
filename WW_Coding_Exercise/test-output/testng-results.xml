@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="24651" started-at="2020-08-02T02:57:37 EDT" finished-at="2020-08-02T02:58:02 EDT">
+  <suite name="Suite" duration-ms="29375" started-at="2020-08-02T10:02:29 EDT" finished-at="2020-08-02T10:02:58 EDT">
     <groups>
     </groups>
-    <test name="Test" duration-ms="24651" started-at="2020-08-02T02:57:37 EDT" finished-at="2020-08-02T02:58:02 EDT">
+    <test name="Test" duration-ms="29375" started-at="2020-08-02T10:02:29 EDT" finished-at="2020-08-02T10:02:58 EDT">
       <class name="Ques_2_weightwatchers.Search_studio_slots">
-        <test-method status="PASS" signature="searchstudio()[pri:0, instance:Ques_2_weightwatchers.Search_studio_slots@7b49cea0]" name="searchstudio" duration-ms="24536" started-at="2020-08-02T02:57:37 EDT" finished-at="2020-08-02T02:58:02 EDT">
+        <test-method status="PASS" signature="searchstudio()[pri:0, instance:Ques_2_weightwatchers.Search_studio_slots@7b49cea0]" name="searchstudio" duration-ms="29172" started-at="2020-08-02T10:02:29 EDT" finished-at="2020-08-02T10:02:58 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchstudio -->

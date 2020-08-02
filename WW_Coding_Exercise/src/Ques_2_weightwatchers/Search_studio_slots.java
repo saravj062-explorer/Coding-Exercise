@@ -87,40 +87,38 @@ public class Search_studio_slots {
 		Assert.assertEquals(firstresultname, locationname,
 				"The First result name in the Find Workshops page and name in specific location page are not same");
 		ExtentReport_Imp.test.log(Status.PASS, "The First result name in the Find Workshops page and name in specific location page are not same");
+		
+		
+		ArrayList<String> inputdayslist= WW_pageobjects_3.daysofweek();
 		Scanner inp = new Scanner(System.in);
 		System.out.println("Enter the day to print meetings of the day by Associate Name");
-		System.out.println("Hint : Input should be of 3 characters of the day like SUN/MON..etc ");
+		System.out.println("Hint : Input should be of 3 characters of the day like  " + inputdayslist);
 		System.out.println();
-		ArrayList<String> inputdayslist = new ArrayList<String>();
-		inputdayslist.add("SUN");
-		inputdayslist.add("MON");
-		inputdayslist.add("TUE");
-		inputdayslist.add("WED");
-		inputdayslist.add("THU");
-		inputdayslist.add("FRI");
-		inputdayslist.add("SAT");
-
 		String inputday = inp.nextLine();
+		ExtentReport_Imp.test.log(Status.INFO, "Finding the slots of associate on " + inputday + ".");
 		if (inputdayslist.contains(inputday)) 
 		{
 			pageobj3.printmeeting(inputday);
-		} else {
+			ExtentReport_Imp.test.log(Status.PASS, "Retrieved the slots of associate on " + inputday + ".");
+		}
+		else {
 			System.out.println("Enter a valid input day name. Refer Hint");
 			Assert.assertTrue(false);
-		}
+			ExtentReport_Imp.test.log(Status.FAIL, "The provided input day is not valid");
 		
 		inp.close();
-		}
+		}}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		finally
 		{
+		// Closing the browser window
 		driver.quit();	
 		}
 
-		// Closing the browser window
+		
 
 	}
 	

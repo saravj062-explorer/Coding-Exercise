@@ -15,7 +15,7 @@ public ExtentTest test;
 	public void onTestStart(ITestResult result) {
 		//ExtentTestManager.startTest(result.getMethod().getMethodName());
 		//ExtentTestManager.getTest().log(Status.INFO, "Test Started");
-		 test = extent.createTest(result.getMethod().getMethodName());
+		test = extent.createTest(result.getMethod().getMethodName());
 		ExtentReport_Imp.test = test;
 		test.log(Status.INFO, "Test Started");
 		ITestListener.super.onTestStart(result);

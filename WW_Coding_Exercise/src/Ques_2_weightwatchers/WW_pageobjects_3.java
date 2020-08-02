@@ -1,5 +1,6 @@
 package Ques_2_weightwatchers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -30,6 +31,17 @@ public class WW_pageobjects_3  extends PageObject
 		return locationname.getText();
 	}
 	
+	public static ArrayList<String> daysofweek() {
+	ArrayList<String> inputdayslist = new ArrayList<String>();
+	inputdayslist.add("SUN");
+	inputdayslist.add("MON");
+	inputdayslist.add("TUE");
+	inputdayslist.add("WED");
+	inputdayslist.add("THU");
+	inputdayslist.add("FRI");
+	inputdayslist.add("SAT");
+	return inputdayslist;
+	}
 	// Finding the schedule
 
 	public void printmeeting(String DAY) {
