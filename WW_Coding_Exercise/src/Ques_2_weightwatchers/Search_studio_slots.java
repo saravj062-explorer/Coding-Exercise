@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +12,6 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import ExtentReport.ExtentReport_Imp;
-import ExtentReport.ExtentTestManager;
 
 public class Search_studio_slots {
 	static WebDriver driver;
@@ -35,7 +32,7 @@ public class Search_studio_slots {
 		String Expectedtitle = "WW (Weight Watchers): Weight Loss & Wellness Help | WW USA";
 	
 		Assert.assertEquals(Actualtitle, Expectedtitle, "Actual Title is not as Expected");	
-		ExtentTestManager.getTest().log(Status.PASS, "Home Page - Actual Title matches the Expected Title");
+		ExtentReport_Imp.test.log(Status.PASS, "Home Page - Actual Title matches the Expected Title");
 		WW_pageobjects_1 pageobj1 = new WW_pageobjects_1(driver);
 		pageobj1.FindaWorkshop.click();
 		
@@ -54,7 +51,7 @@ public class Search_studio_slots {
 		String Exp_workshop_pagetitle = "Find WW Studios & Meetings Near You | WW USA";
 
 		Assert.assertEquals(Act_workshop_pagetitle, Exp_workshop_pagetitle, "Actual Title is not as Expected Title");
-		ExtentTestManager.getTest().log(Status.PASS, "Find Workshop Page - Actual Title matches the Expected Title");
+		ExtentReport_Imp.test.log(Status.PASS, "Find Workshop Page - Actual Title matches the Expected Title");
 		WW_pageobjects_2 pageobj2 = new WW_pageobjects_2(driver);
 		WW_pageobjects_3 pageobj3 = new WW_pageobjects_3(driver);
 		pageobj2.clickLocationSearch();
@@ -89,7 +86,7 @@ public class Search_studio_slots {
 		// result location page title
 		Assert.assertEquals(firstresultname, locationname,
 				"The First result name in the Find Workshops page and name in specific location page are not same");
-		ExtentTestManager.getTest().log(Status.PASS, "The First result name in the Find Workshops page and name in specific location page are not same");
+		ExtentReport_Imp.test.log(Status.PASS, "The First result name in the Find Workshops page and name in specific location page are not same");
 		Scanner inp = new Scanner(System.in);
 		System.out.println("Enter the day to print meetings of the day by Associate Name");
 		System.out.println("Hint : Input should be of 3 characters of the day like SUN/MON..etc ");
@@ -120,7 +117,7 @@ public class Search_studio_slots {
 		}
 		finally
 		{
-		//driver.quit();	
+		driver.quit();	
 		}
 
 		// Closing the browser window

@@ -7,22 +7,24 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import ExtentReport.ExtentReport_Imp;
-import ExtentReport.ExtentTestManager;
 
 public class Listener implements ITestListener{
 public ExtentReports extent;	
 public ExtentTest test;
 	@Override
 	public void onTestStart(ITestResult result) {
-		ExtentTestManager.startTest(result.getMethod().getMethodName());
-		ExtentTestManager.getTest().log(Status.INFO, "Test Started");
-	
+		//ExtentTestManager.startTest(result.getMethod().getMethodName());
+		//ExtentTestManager.getTest().log(Status.INFO, "Test Started");
+		 test = extent.createTest(result.getMethod().getMethodName());
+		ExtentReport_Imp.test = test;
+		test.log(Status.INFO, "Test Started");
 		ITestListener.super.onTestStart(result);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		ExtentTestManager.getTest().log(Status.PASS, "Test Passed");
+		//ExtentTestManager.getTest().log(Status.PASS, "Test Passed");
+		test.log(Status.PASS, "Test Passed");
 		System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
 		ITestListener.super.onTestSuccess(result);
 	}
