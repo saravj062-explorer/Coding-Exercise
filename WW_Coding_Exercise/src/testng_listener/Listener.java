@@ -18,7 +18,7 @@ public ExtentTest test;
 		test = extent.createTest(result.getMethod().getMethodName());
 		ExtentReport_Imp.test = test;
 		test.log(Status.INFO, "Test Started");
-		ITestListener.super.onTestStart(result);
+		
 	}
 
 	@Override
@@ -26,27 +26,41 @@ public ExtentTest test;
 		//ExtentTestManager.getTest().log(Status.PASS, "Test Passed");
 		test.log(Status.PASS, "Test Passed");
 		System.out.println("*** Executed " + result.getMethod().getMethodName() + " test successfully...");
-		ITestListener.super.onTestSuccess(result);
+		
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.log(Status.FAIL, "Test Failed");
-		ITestListener.super.onTestFailure(result);
+		
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
 		
 		extent = ExtentReport_Imp.getinstance();
-		ITestListener.super.onStart(context);
-	}
+		}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		ITestListener.super.onFinish(context);
+		
 		
 		extent.flush();
+	}
+
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		
+	}
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		
+	}
+
+	@Override
+	public void onTestFailedWithTimeout(ITestResult result) {
+		
 	}
 	
 	
