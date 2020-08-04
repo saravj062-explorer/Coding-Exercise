@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,10 +21,10 @@ public class Search_studio_slots {
 	@Test
 	public static void searchstudio()  {
 		try{
-			System.setProperty("webdriver.chrome.driver", "./drivers//chromedriver.exe");
-		
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://www.weightwatchers.com/us/");
+		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 		driver.manage().window().maximize();
 		String Actualtitle = driver.getTitle();
 
@@ -35,15 +37,8 @@ public class Search_studio_slots {
 		ExtentReport_Imp.test.log(Status.PASS, "Home Page - Actual Title matches the Expected Title");
 		WW_pageobjects_1 pageobj1 = new WW_pageobjects_1(driver);
 		pageobj1.FindaWorkshop.click();
-		
-		 
-		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		WebDriverWait wait = new WebDriverWait(driver, 3);
+		wait.until(ExpectedConditions.titleContains("Meetings Near You | WW USA"));
 		String Act_workshop_pagetitle = driver.getTitle();
 
 		// Replacing non breaking space with space"
@@ -57,15 +52,9 @@ public class Search_studio_slots {
 		pageobj2.clickLocationSearch();
 		pageobj2.LocationSearchInput();
 		pageobj2.SearchArrow();
-		//driver.manage().timeouts().pageLoadTimeout(5000,TimeUnit.MILLISECONDS);
 		
-		  try { Thread.sleep(2500);
-		  }
-		  catch (InterruptedException e) 
-		  { e.printStackTrace(); 
-		  }
-		 
-		  //Printing the FIRST SEARCH RESULT & it's DISTANCE
+		
+		//Printing the FIRST SEARCH RESULT & it's DISTANCE
 		String firstresultname = pageobj2.fr_getText();
 		String firstDistance = pageobj2.fd_getText();
 		System.out.println("The first search result Title :  " + firstresultname);
@@ -73,17 +62,10 @@ public class Search_studio_slots {
 		System.out.println();
 		pageobj2.SearchResultClick();
 
-		try { Thread.sleep(5000);
-		  }
-		  catch (InterruptedException e) 
-		  { e.printStackTrace(); 
-		  }
-		
-		
+			
 		String locationname = pageobj3.loc_getText();
 
-		// Checking if the title of the 1st search result is same as the 1st search
-		// result location page title
+		// Checking if the title of the 1st search result is same as the 1st search result location page title
 		Assert.assertEquals(firstresultname, locationname,
 				"The First result name in the Find Workshops page and name in specific location page are not same");
 		ExtentReport_Imp.test.log(Status.PASS, "The First result name in the Find Workshops page and name in specific location page are same");
